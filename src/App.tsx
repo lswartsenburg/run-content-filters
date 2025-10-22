@@ -4,7 +4,22 @@ import {
   PreferencesDropdown,
   useContentReviewFilterPreferencesFromLocalStorage,
   ContentReviewFilterGlobalPreferencesProvider,
+
 } from "content-review-filters";
+import "content-review-filters/style.css"
+
+import * as stylex from '@stylexjs/stylex';
+const styles = stylex.create({
+  wrapper: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  card: {
+    padding: '2em',
+  },
+});
 
 function App() {
   const initialPreferences = useContentReviewFilterPreferencesFromLocalStorage({
@@ -51,6 +66,7 @@ function App() {
       <ContentReviewFilterGlobalPreferencesProvider
         initialPreferences={initialPreferences}
       >
+        <div {...stylex.props([styles.card, styles.wrapper])}>
         <div>
           <PreferencesDropdown isOpen={true} onClose={() => {}} />
         </div>
@@ -63,6 +79,7 @@ function App() {
           >
             <source src="/example_video.mp4" type="video/mp4" />
           </ContentFilteredVideo>
+        </div>
         </div>
       </ContentReviewFilterGlobalPreferencesProvider>
     </>
