@@ -4,6 +4,7 @@ import {
   PreferencesDropdown,
   useContentReviewFilterPreferencesFromLocalStorage,
   ContentReviewFilterGlobalPreferencesProvider,
+  ContentFilteredImage
 
 } from "content-review-filters";
 import "content-review-filters/style.css"
@@ -69,6 +70,13 @@ function App() {
         <div {...stylex.props([styles.card, styles.wrapper])}>
         <div>
           <PreferencesDropdown isOpen={true} onClose={() => {}} />
+        </div>
+        <div>
+                    <ContentFilteredImage
+            src="/example_image.jpg"
+            width="400"
+            filterControls={true}
+          />
         </div>
         <div>
           <ContentFilteredVideo
