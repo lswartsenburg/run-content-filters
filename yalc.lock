@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "content-review-filters": {
+      "signature": "3d2b88708da162cd6cd1bdcd398e3f1c",
+      "file": true,
+      "replaced": "0.0.0"
+    }
+  }
+}

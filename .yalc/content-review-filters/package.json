@@ -1,0 +1,33 @@
+{
+  "name": "content-review-filters",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js"
+    }
+  },
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b ./tsconfig.lib.json && vite build && npm run build:flowtypes",
+    "lint": "eslint .",
+    "start": "vite start",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build",
+    "build:flowtypes": "npx flowgen dist/main.d.ts -o dist/main.js.flow"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "dependencies": {
+    "@stylexjs/stylex": "^0.14.1"
+  },
+  "yalcSig": "3d2b88708da162cd6cd1bdcd398e3f1c"
+}
