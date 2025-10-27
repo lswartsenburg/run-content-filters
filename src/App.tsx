@@ -68,7 +68,7 @@ function App() {
         initialPreferences={initialPreferences}
       >
         <div {...stylex.props([styles.card, styles.wrapper])}>
-        <div>
+        <div className="navbar">
           <PreferencesDropdown isOpen={true} onClose={() => {}} />
         </div>
         <div>
